@@ -1,0 +1,120 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#mainHeader {
+    background: linear-gradient(to right,yellow, #000000);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    color:red;
+    margin: 15px 0;
+}
+
+h3, p {
+    margin: 10px 0;
+}
+
+.eventCard {
+    border: 2px solid #ccc;
+    padding: 15px;
+    margin: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu li {
+    margin: 10px;
+    padding: 5px;
+}
+
+a:link {
+    color: rgb(63, 63, 109);
+}
+
+a:visited {
+    color: rgb(63, 42, 63);
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+}
+
+a:active {
+    color: rgb(209, 209, 209);
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+th {
+    background-color: #121e2b;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.news-columns {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+}
+
+.selected {
+    outline: 3px solid orange;
+}
+
+.hidden-box {
+    visibility: hidden;
+}
+
+.none-box {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    body {
+        font-size: 90%;
+    }
+
+    img {
+        width: 50vw;
+        height: auto;
+    }
+}
+
+

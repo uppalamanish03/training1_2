@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .traffic-light {
+        width: 100px;
+        height: 300px;
+        background-color: #333;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 10px auto;
+    }
+
+    .light {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #555;
+    }
+
+    .red {
+        animation: redLight 6s infinite;
+    }
+
+    .yellow {
+        animation: yellowLight 6s infinite;
+    }
+
+    .green {
+        animation: greenLight 6s infinite;
+    }
+
+    @keyframes redLight {
+        0%, 33.33% { background-color: red; }
+        33.34%, 100% { background-color: #996969; }
+    }
+
+    @keyframes yellowLight {
+        0%, 33.33% { background-color: #af9e6d; }
+        33.34%, 66.66% { background-color: yellow; }
+        66.67%, 100% { background-color:  #af9e6d; }
+    }
+
+    @keyframes greenLight {
+        0%, 66.66% { background-color: #7d855b; }
+        66.67%, 100% { background-color: green; }
+    }
+    .bike {
+        font-size: 50px;
+        position: absolute;
+        top: 350px;
+        left: 0;
+        animation: moveBike 6s infinite;
+    }
+    @keyframes moveBike {
+        0% { left: 1500px; }
+        33%{left: 1500px;}
+        66.60%{left:1450px}
+        66.66% { left: 1450px; }
+        100% { left: -10px; }
+    }
+</style>
+<body>
+    <div class="traffic-light">
+        <div class="light red"></div>
+        <div class="light yellow"></div>
+        <div class="light green"></div>
+    </div>
+    <div class="bike">🚴</div>
+</body>
+</html>

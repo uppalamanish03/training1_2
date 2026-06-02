@@ -1,0 +1,95 @@
+GENERATE A CAPTHA IMAGE ON CLICKING BUSES AND TRAINS IN THE NAVBAR AND VALIDATE THE CAPTCHA INPUT TO ALLOW ACCESS TO THE BUSES AND TRAINS PAGES.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPTCHA Validation</title>
+    <style>
+        .captcha-container {
+            display: none;
+            margin-top: 20px;
+        }
+        .captcha-image {
+            width: 150px;
+            height: 50px;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .captcha-input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" id="buses-link">Buses</a></li>
+            <li><a href="#" id="trains-link">Trains</a></li>
+        </ul>
+    </nav>
+
+    <div class="captcha-container" id="captcha-container">
+        <div class="captcha-image" id="captcha-image">AB12C</div>
+        <input type="text" class="captcha-input" id="captcha-input" placeholder="Enter CAPTCHA">
+        <button class="submit-btn" id="submit-btn">Submit</button>
+    </div>
+
+    <script>
+        const busesLink = document.getElementById('buses-link');
+        const trainsLink = document.getElementById('trains-link');
+        const captchaContainer = document.getElementById('captcha-container');
+        const captchaImage = document.getElementById('captcha-image');
+        const captchaInput = document.getElementById('captcha-input');
+        const submitBtn = document.getElementById('submit-btn');
+
+        function generateCaptcha() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let captcha = '';
+            for (let i = 0; i < 5; i++) {
+                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return captcha;
+        }
+
+        function showCaptcha() {
+            const newCaptcha = generateCaptcha();
+            captchaImage.textContent = newCaptcha;
+            captchaContainer.style.display = 'block';
+        }
+
+        busesLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showCaptcha();
+        });
+
+        trainsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showCaptcha();
+        });
+
+        submitBtn.addEventListener('click', () => {
+            if (captchaInput.value === captchaImage.textContent) {
+                alert('CAPTCHA validated! Access granted.');
+                // Redirect to the respective page
+                // window.location.href = 'buses.html'; // Uncomment for actual redirection
+                // window.location.href = 'trains.html'; // Uncomment for actual redirection
+            } else {
+                alert('Incorrect CAPTCHA. Please try again.');
+                showCaptcha(); // Generate a new CAPTCHA
+                captchaInput.value = ''; // Clear input
+            }
+        });
+    </script>
+</body>
+</html>

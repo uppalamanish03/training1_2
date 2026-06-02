@@ -1,0 +1,47 @@
+<!-- Exercise 8.1:
+Create a registration form using Bootstrap form components like form-control, form-check, and
+input-group.
+Exercise 8.2:
+Style a login form using form-floating. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Registration Form</h2>
+        <form>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control"placeholder="Enter username">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control"placeholder="Enter email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" placeholder="Enter password">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input">
+                <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+            <!-- form-floating -->
+            <div class="form-floating mt-5">
+                <input type="email" class="form-control" id="floatingInput" placeholder="Email address">
+                <label for="floatingInput">Email address</label>
+                
+            </div>
+
+        </form>
+</body>
+</html>
